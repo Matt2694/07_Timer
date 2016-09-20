@@ -4,11 +4,11 @@ namespace _07_Timer{
 
     internal class Timer{
 
-        private double seconds = 0;
-        private double hours = 0;
-        private double minutes = 0;
-        private double newSeconds = 0;
-        public double Seconds{
+        private int seconds = 0;
+        private int hours = 0;
+        private int minutes = 0;
+        private int newSeconds = 0;
+        public int Seconds{
 
             get{
                 return seconds;
@@ -25,14 +25,13 @@ namespace _07_Timer{
         }
         public void SecondsToHMS(){
 
-            double holding;
-            double holding2;
+            int holding;
             newSeconds = Seconds % 60;
             holding = Seconds - newSeconds;
             minutes = holding / 60;
-            holding2 = minutes % 60;
-            hours = minutes - holding2;
-            minutes = holding2;
+            holding = minutes % 60;
+            hours = minutes - holding;
+            minutes = holding;
             hours = hours / 60;
             if (hours < 1){
                 hours = 0;
